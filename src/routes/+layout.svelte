@@ -7,7 +7,7 @@
         <li><a href="/">Services</a></li>
         <li><a href="/">About</a></li>
         <li><a href="/">Spaces</a></li>
-        <li>Newsroom
+        <li><a href="/newsroom">Newsroom</a>
             <ul>
                 <li><a href="/newsroom/media_mentions">Media Mentions</a></li>
             </ul>
