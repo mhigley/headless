@@ -2,7 +2,7 @@
     export let data;
     const { stories } = data;
 
-    console.log(stories);
+    // console.log(stories);
 </script>
 
 <h1>Blog</h1>
@@ -11,10 +11,12 @@
     <ul>
         {#each stories as story}
             <li>
+                <h1>{story.title}</h1>
                 <picture>
-                    <img src={story.ACFstories.image.srcSet} alt={story.ACFstories.image.altText}>
+                    <img src={story.ACFstories.image.sourceUrl} srcset={story.ACFstories.image.srcSet} alt={story.ACFstories.image.altText}>
                 </picture>
-                <p>{story.title}</p>
+                <h2>{story.ACFstories.name}</h2>
+                <p>{@html story.ACFstories.content}</p>
             </li>
         {/each}
     </ul>

@@ -2,7 +2,7 @@
     export let data;
     const { posts } = data;
 
-    console.log(posts);
+    // console.log(posts);
 </script>
 
 <h1>Media Mentions</h1>
