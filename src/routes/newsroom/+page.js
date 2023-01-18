@@ -1,33 +1,33 @@
-import { PUBLIC_LOCAL_WP_API_URL } from '$env/static/public';
+import { PUBLIC_LIVE_WP_API_URL } from '$env/static/public';
 
 
 export const load = async ({ fetch }) => {
     const fetchStories = async () => {
         const query = `
-            {
-                stories(first: 10) {
+            query NewQuery {
+                stories {
                     nodes {
-                        ...StoryFields
+                        ...StoryFragment
+                        title
+                        slug
                     }
                 }
             }
-            
-            fragment StoryFields on Story {
+
+            fragment StoryFragment on Story {
                 ACFstories {
                     name
                     content
+                    fieldGroupName
                     image {
                         altText
                         srcSet
                     }
                 }
-                id
-                title
-                slug
             }
         `;
         
-        const storiesRes = await fetch(PUBLIC_LOCAL_WP_API_URL, {
+        const storiesRes = await fetch(PUBLIC_LIVE_WP_API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
@@ -37,7 +37,8 @@ export const load = async ({ fetch }) => {
 
         if(storiesRes.ok){
             const storiesData = await storiesRes.json();
-            console.log(storiesData);
+            const stories = storiesData.data.stories.nodes;
+            return stories;
         }
     }
     return {
