@@ -42,6 +42,6 @@ export const load = async ({ fetch }) => {
         }
     }
     return {
-        // stories: fetchStories(),
+        stories: fetchStories(),
     }
 }
