@@ -4,7 +4,7 @@ export async function load({ fetch, params }) {
     const fetchStory = async () => {
         const query = `
             query SingleStory {
-                storyBy( slug: "${params.slug}" ) {
+                story( id: "${params.slug}", idType:SLUG) {
                     id
                     title
                 }
@@ -22,7 +22,7 @@ export async function load({ fetch, params }) {
 
         if(storyRes.ok){
             const storyData = await storyRes.json();
-            const story = storyData.data.storyBy;
+            const story = storyData.data.story;
             return story;
         }
     };
