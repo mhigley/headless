@@ -1,4 +1,4 @@
-import { PUBLIC_LOCAL_WP_API_URL } from '$env/static/public';
+import { PUBLIC_LIVE_WP_API_URL } from '$env/static/public';
 
 export async function load({ fetch, params }) {
     const fetchStory = async () => {
@@ -11,7 +11,7 @@ export async function load({ fetch, params }) {
             }
         `;
         
-        const storyRes = await fetch(PUBLIC_LOCAL_WP_API_URL, {
+        const storyRes = await fetch(PUBLIC_LIVE_WP_API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
