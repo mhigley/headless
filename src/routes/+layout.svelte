@@ -9,6 +9,7 @@
         <li><a href="/">Spaces</a></li>
         <li><a href="/newsroom">Newsroom</a>
             <ul>
+                <li><a href="/newsroom/stories" data-sveltekit-preload-data>Bitwise Stories</a></li>
                 <li><a href="/newsroom/media_mentions">Media Mentions</a></li>
             </ul>
         </li>

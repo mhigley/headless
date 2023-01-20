@@ -1,6 +1,7 @@
 <script>
     export let data;
-    const { stories } = data;
+    // const { stories } = data;
+    $: ({ stories } = data);
 </script>
 
 <h1>Blog</h1>
