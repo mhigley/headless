@@ -1,6 +1,8 @@
 <script>
     export let data;
-    const { posts } = data;
+    // const { posts } = data;
+
+    $: ({ posts } = data);
 
     // console.log(posts);
 </script>
