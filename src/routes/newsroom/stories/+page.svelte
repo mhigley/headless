@@ -1,6 +1,5 @@
 <script>
     export let data;
-    // const { stories } = data;
     $: ({ stories } = data);
 </script>
 
